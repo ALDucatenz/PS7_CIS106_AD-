@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="aleja"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-11-05 05:27:35 PM"/>
+        <attribute name="created" value="YWxlamE7REVTS1RPUC1KSE9JTDJKOzIwMjEtMTEtMDU7MDU6MDk6MTAgUE07Mjg2MQ=="/>
+        <attribute name="edited" value="YWxlamE7REVTS1RPUC1KSE9JTDJKOzIwMjEtMTEtMDU7MDU6Mjc6MzUgUE07MTsyOTc2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="name" type="String" array="False" size=""/>
+            <declare name="hit" type="Real" array="False" size=""/>
+            <declare name="bat" type="Real" array="False" size=""/>
+            <declare name="avg" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter Lastname&quot;" newline="True"/>
+            <input variable="name"/>
+            <output expression="&quot;Enter number of hits&quot;" newline="True"/>
+            <input variable="hit"/>
+            <output expression="&quot;Enter times at bat&quot;" newline="True"/>
+            <input variable="bat"/>
+            <call expression="compavg(hit,bat)"/>
+            <assign variable="avg" expression="compavg(hit,bat)"/>
+            <output expression="name &amp; &quot;'s Batting average: &quot; &amp; avg" newline="True"/>
+        </body>
+    </function>
+    <function name="compavg" type="Real" variable="avg">
+        <parameters>
+            <parameter name="hit" type="Real" array="False"/>
+            <parameter name="bat" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="avg" type="Real" array="False" size=""/>
+            <assign variable="avg" expression="hit / bat"/>
+        </body>
+    </function>
+</flowgorithm>
