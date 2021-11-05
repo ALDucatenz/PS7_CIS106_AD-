@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="aleja"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-11-04 09:37:39 PM"/>
+        <attribute name="created" value="YWxlamE7REVTS1RPUC1KSE9JTDJKOzIwMjEtMTEtMDQ7MDk6MDI6MTUgUE07Mjg2Mg=="/>
+        <attribute name="edited" value="YWxlamE7REVTS1RPUC1KSE9JTDJKOzIwMjEtMTEtMDQ7MDk6Mzc6MzkgUE07MTsyOTg0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="q" type="Real" array="False" size=""/>
+            <declare name="p" type="Real" array="False" size=""/>
+            <declare name="tot" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter Quantity: &quot;" newline="True"/>
+            <input variable="q"/>
+            <output expression="&quot;Enter Price: &quot;" newline="True"/>
+            <input variable="p"/>
+            <call expression="comptotal(q,p)"/>
+            <assign variable="tot" expression="comptotal(q,p)"/>
+            <output expression="&quot;Total: $&quot; &amp; tot" newline="True"/>
+        </body>
+    </function>
+    <function name="comptotal" type="Real" variable="tot">
+        <parameters>
+            <parameter name="q" type="Real" array="False"/>
+            <parameter name="p" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="tot" type="Real" array="False" size=""/>
+            <assign variable="tot" expression="q * p"/>
+            <if expression="tot &gt; 10000.00">
+                <then>
+                    <assign variable="tot" expression="tot * 0.90"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
